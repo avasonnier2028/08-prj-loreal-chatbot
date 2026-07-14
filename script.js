@@ -45,24 +45,61 @@ chatForm.addEventListener("submit", async (e) => {
   });
   const data = await response.json();
   //console.log(data);
-  console.log(data.choices[0].message.role);
-  console.log(data.choices[0].message.content);
   messages.push({
     role: "assistant",
     content: `${data.choices[0].message.content}`,
   });
 
-  aiMsg.innerText = `${data.choices[0].message.content}`;
+  aiMsg.innerHTML = `${mdInterpreter(data.choices[0].message.content)}`;
+  
 });
 
 function messageInterpreter(role, msg) {
   let message = document.createElement("p");
   message.classList.add("msg");
-  message.innerText = `${msg}`;
+  message.innerHTML = `${msg}`;
   if (role === "user") {
     message.classList.add("user");
   } else {
     message.classList.add("ai");
   }
   return message;
+}
+
+function mdInterpreter(msg){
+  let startTagB = false;
+  let startTagI = false;
+  let startTagBI = false;
+  //replace bold & italic tags
+  while (msg.includes("*")) {
+    if(msg.includes('***') && !startTagBI){
+      msg = msg.replace("***", "<b><i>");
+      startTagBI = true;
+      continue;
+    }else if(msg.includes('***')){
+      msg = msg.replace("***", "</i></b>");
+      startTagBI = false;
+      continue;
+    }
+
+    if (msg.includes("**") && !startTagB) {
+      msg = msg.replace("**", "<b>");
+      startTagB = true;
+      continue;
+    } else if (msg.includes("**")) {
+      msg = msg.replace("**", "</b>");
+      startTagB = false;
+      continue;
+    }
+
+    if (msg.includes("*") && !startTagI) {
+      msg = msg.replace("*", "<i>");
+      startTagI = true;
+    } else if (msg.includes("*")) {
+      msg = msg.replace("***", "</i>");
+      startTagI = false;
+    }
+  }
+
+  return msg;
 }
