@@ -12,3 +12,34 @@ L’Oréal is exploring the power of AI, and your job is to showcase what's poss
 When deploying through Cloudflare, make sure your API request body (in `script.js`) includes a `messages` array and handle the response by extracting `data.choices[0].message.content`.
 
 Enjoy building your L’Oréal beauty assistant! 💄
+
+##
+
+### Tasks
+
+- L'Oréal Branding
+  - [ ] Logo
+  - [ ] Brand Colors
+  - [ ] Fonts
+  - [ ] Styling
+- [ ] Chatbot Configuration
+- [ ] AI Relevence
+- [ ] Secure Deployment
+- [ ] **(BONUS)** Conversation History
+- [ ] **(BONUS)** Display User Question
+- [ ] **(BONUS)** Chat UI
+
+## 
+
+### Rubric
+|Criteria|Requirements|Pts|
+| --- | --- | --- |
+| L'Oréal Branding | L’Oréal logo is shown and the page uses official brand colors and styling | 10pts |
+| Chatbot Configuration | Chatbot uses a system prompt, captures user input, sends it to OpenAI, and displays a response | 20pts |
+| AI Relevance |Chatbot refuses unrelated questions and only answers queries about L’Oréal products and routines | 10pts |
+| Secure Deployment | Chatbot requests are safely routed through Cloudflare Worker | 10pts |
+| __(BONUS)__ Maintain Conversation History | Chatbot remembers details from earlier messages and responds with context awareness | 10pts |
+| __(BONUS)__ Display User Question Above Response | Each user question is briefly shown above the AI response before resetting on next input | 5pts |
+| __(BONUS)__ Chat Conversation UI | Messages from user and chatbot are styled in distinct chat bubbles with a clear layout | 10pts |
+
+
