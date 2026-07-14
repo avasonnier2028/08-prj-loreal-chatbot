@@ -18,16 +18,15 @@ Enjoy building your L’Oréal beauty assistant! 💄
 ### Tasks
 
 - L'Oréal Branding
-  - [ ] Logo
-  - [ ] Brand Colors
-  - [ ] Fonts
-  - [ ] Styling
-- [ ] Chatbot Configuration
-- [ ] AI Relevence
-- [ ] Secure Deployment
-- [ ] **(BONUS)** Conversation History
-- [ ] **(BONUS)** Display User Question
-- [ ] **(BONUS)** Chat UI
+  - [x] Logo
+  - [x] Brand Colors
+  - [x] Styling
+- [x] Chatbot Configuration
+- [x] AI Relevence
+- [x] Secure Deployment
+- [x] **(BONUS)** Conversation History
+- [x] **(BONUS)** Display User Question
+- [x] **(BONUS)** Chat UI
 
 ## 
 
@@ -41,5 +40,3 @@ Enjoy building your L’Oréal beauty assistant! 💄
 | __(BONUS)__ Maintain Conversation History | Chatbot remembers details from earlier messages and responds with context awareness | 10pts |
 | __(BONUS)__ Display User Question Above Response | Each user question is briefly shown above the AI response before resetting on next input | 5pts |
 | __(BONUS)__ Chat Conversation UI | Messages from user and chatbot are styled in distinct chat bubbles with a clear layout | 10pts |
-
-

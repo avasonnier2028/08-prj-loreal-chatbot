@@ -11,6 +11,9 @@ body {
   color: #333;
   display: flex;
   justify-content: center;
+
+  --red: rgb(235, 7, 60);
+  --gold: rgb(227, 166, 53);
 }
 
 .page-wrapper {
@@ -20,14 +23,18 @@ body {
 
 /* header */
 .site-header {
-  text-align: center;
   padding-top: 50px;
+  text-align: center;
 }
 
 .site-title {
   font-size: 22px;
   font-weight: 500;
   margin-bottom: 10px;
+}
+
+.site-logo{
+  height: 50px;
 }
 
 /* chat window */
@@ -44,22 +51,55 @@ body {
   overflow-y: auto;
   background: #fafafa;
   white-space: pre-line;
+
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
 }
 
 /* messages */
 .msg {
   margin-bottom: 14px;
   line-height: 1.5;
+  padding: 10px;
+  border-radius: 8px;
+  width: fit-content;
+  max-width: 90%;
+
+  position: relative;
+  scroll-snap-align: center;
 }
 
 .msg.user {
-  color: #000;
+  color: black;
+  text-align: end;
+  margin-left: auto;
+  background-color: var(--gold);
+}
+.msg.user::after{
+  content: "";
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  bottom: -20px;
+  right: 5px;
+  background-color: var(--gold);
+  clip-path: polygon(100% 100%, 100% 0%, 0% 0%);
 }
 
 .msg.ai {
-  color: #666666;
+  color: rgb(249, 220, 220);
+  background-color: var(--red);
 }
-
+.msg.ai::before{
+  content: "";
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  bottom: -20px;
+  left: 5px;
+  background-color: var(--red);
+  clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+}
 /* input row */
 .chat-form {
   display: flex;
